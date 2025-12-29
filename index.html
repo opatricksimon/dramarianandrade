@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dra. Mariana Andrade - Odontologia Estética e Harmonização Orofacial em Lauro de Freitas, BA. Transforme seu sorriso e rosto com uma especialista.">
+    <title>Dra. Mariana Andrade | Odontologia e Estética Avançada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ============================================
+           CSS RESET & VARIABLES
+           ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #C9A962;
+            --gold-light: #D4BC7B;
+            --gold-dark: #A88B4A;
+            --black: #0A0A0A;
+            --black-light: #1A1A1A;
+            --black-medium: #2A2A2A;
+            --white: #FFFFFF;
+            --gray: #888888;
+            --gray-light: #CCCCCC;
+            --font-elegant: 'Cormorant Garamond', serif;
+            --font-modern: 'Montserrat', sans-serif;
+            --transition: all 0.3s ease;
+            --shadow: 0 10px 40px rgba(0,0,0,0.3);
+            --shadow-gold: 0 5px 30px rgba(201, 169, 98, 0.3);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-modern);
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ============================================
+           BARRA DE PROGRESSO
+           ============================================ */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light));
+            z-index: 10000;
+            transition: width 0.1s ease-out;
+        }
+
+        /* ============================================
+           HEADER
+           ============================================ */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        .header.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(201, 169, 98, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-elegant);
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--white);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gold);
+            color: var(--black);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .header-cta:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .header-cta svg {
+            width: 18px;
+            height: 18px;
+        }
+
+/* ============================================
+   HERO - Fullscreen com texto sobre a imagem
+   ============================================ */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 10, 0) 0%,
+        rgba(10, 10, 10, 0) 35%,
+        rgba(10, 10, 10, 0.3) 50%,
+        rgba(10, 10, 10, 0.6) 65%,
+        rgba(10, 10, 10, 0.85) 80%,
+        rgba(10, 10, 10, 1) 100%
+    );
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 0 20px 60px 20px;
+    max-width: 900px;
+}
+
+.hero-content h1 {
+    font-family: var(--font-elegant);
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    white-space: nowrap;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8), 0 4px 40px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards 0.3s;
+}
+
+.hero-subtitle {
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    color: var(--gray-light);
+    margin-bottom: 30px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease forwards 0.5s;
+}
+
+.hero-cta {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease forwards 0.7s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tablet - Ajuste para telas médias */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        white-space: normal;
+        font-size: clamp(1.6rem, 5vw, 2.2rem);
+    }
+}
+
+/* Desktop - Ajustes de tamanho */
+@media (min-width: 1024px) {
+    .hero-content {
+        padding-bottom: 80px;
+    }
+    
+    .hero-content h1 {
+        font-size: 3.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        letter-spacing: 4px;
+    }
+    
+    section {
+        padding: 100px 0;
+    }
+}
+        /* ============================================
+           BOTÕES
+           ============================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(201, 169, 98, 0.5);
+        }
+
+        .btn-primary svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* ============================================
+           SEÇÕES - ESTILO GERAL
+           ============================================ */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-elegant);
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        /* ============================================
+           SOBRE
+           ============================================ */
+        .about {
+            background: linear-gradient(180deg, var(--black) 0%, var(--black-light) 100%);
+        }
+
+        .about .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .about .container {
+                grid-template-columns: 1fr 1.2fr;
+                gap: 60px;
+            }
+        }
+
+        .about-photo {
+            position: relative;
+        }
+
+        .about-photo img {
+            width: 100%;
+            max-width: 350px;
+            margin: 0 auto;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .about-photo::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: 15px;
+            bottom: 15px;
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .about-content h2 {
+            font-family: var(--font-elegant);
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: var(--gray-light);
+            margin-bottom: 15px;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-content p strong {
+            color: var(--gold);
+        }
+
+        .about-highlight {
+            background: linear-gradient(135deg, rgba(201, 169, 98, 0.15), rgba(201, 169, 98, 0.05));
+            border-left: 3px solid var(--gold);
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 0 10px 10px 0;
+            font-size: 0.95rem;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-elegant);
+            font-size: 2.5rem;
+            color: var(--gold);
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 5px;
+        }
+
+        /* ============================================
+           TRATAMENTOS
+           ============================================ */
+        .treatments {
+            background: var(--black);
+        }
+
+        .treatments-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .treatments-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+        }
+
+        .treatment-card {
+            background: linear-gradient(145deg, var(--black-medium), var(--black-light));
+            border: 1px solid rgba(201, 169, 98, 0.1);
+            border-radius: 16px;
+            padding: 25px 15px;
+            text-align: center;
+            transition: var(--transition);
+            display: block;
+        }
+
+        .treatment-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .treatment-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 50%;
+        }
+
+        .treatment-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--black);
+        }
+
+        .treatment-card h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--white);
+        }
+
+        .treatment-card p {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        .treatment-highlight {
+            grid-column: span 2;
+            background: linear-gradient(145deg, rgba(201, 169, 98, 0.2), rgba(201, 169, 98, 0.05));
+            border-color: var(--gold);
+        }
+
+        @media (min-width: 768px) {
+            .treatment-highlight {
+                grid-column: span 4;
+            }
+        }
+                /* ============================================
+           RESULTADOS
+           ============================================ */
+        .results {
+            background: linear-gradient(180deg, var(--black) 0%, var(--black-light) 100%);
+            padding-bottom: 60px;
+        }
+
+        .results-scroll {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .results-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .result-card {
+            flex: 0 0 280px;
+            scroll-snap-align: start;
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--black-medium);
+            border: 1px solid rgba(201, 169, 98, 0.1);
+            transition: var(--transition);
+        }
+
+        .result-card:hover {
+            border-color: var(--gold);
+            transform: scale(1.02);
+        }
+
+        .result-image {
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+        }
+
+        .result-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .result-card:hover .result-image img {
+            transform: scale(1.05);
+        }
+
+        .result-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .result-info h4 {
+            font-size: 1rem;
+            color: var(--gold);
+            margin-bottom: 3px;
+        }
+
+        .result-info span {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .scroll-hint {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-top: 15px;
+            animation: bounceX 2s infinite;
+        }
+
+        .scroll-hint svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--gold);
+        }
+
+        @keyframes bounceX {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+        }
+
+        /* ============================================
+           VÍDEOS
+           ============================================ */
+        .videos {
+            background: var(--black);
+            padding-bottom: 60px;
+        }
+
+        .videos-scroll {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .videos-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .video-card {
+            flex: 0 0 280px;
+            aspect-ratio: 9/16;
+            border-radius: 16px;
+            overflow: hidden;
+            scroll-snap-align: start;
+            background: var(--black-medium);
+            border: 1px solid rgba(201, 169, 98, 0.1);
+        }
+
+        .video-card iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ============================================
+           DEPOIMENTOS
+           ============================================ */
+        .testimonials {
+            background: linear-gradient(180deg, var(--black) 0%, var(--black-light) 100%);
+            padding-bottom: 60px;
+        }
+
+        .testimonials-scroll {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .testimonials-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .testimonial-card {
+            flex: 0 0 300px;
+            scroll-snap-align: start;
+            background: linear-gradient(145deg, var(--black-medium), var(--black-light));
+            border: 1px solid rgba(201, 169, 98, 0.1);
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-stars svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--gold);
+        }
+
+        .testimonial-card blockquote {
+            font-size: 0.95rem;
+            color: var(--gray-light);
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--black);
+            font-size: 1.1rem;
+        }
+
+        .testimonial-info h4 {
+            font-size: 0.95rem;
+            color: var(--white);
+        }
+
+        .testimonial-info span {
+            font-size: 0.8rem;
+            color: var(--gold);
+        }
+
+        /* ============================================
+           DIFERENCIAIS
+           ============================================ */
+        .differentials {
+            background: var(--black);
+        }
+
+        .differentials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .differentials-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .differential-item {
+            text-align: center;
+            padding: 25px 15px;
+            background: linear-gradient(145deg, var(--black-medium), var(--black-light));
+            border-radius: 16px;
+            border: 1px solid rgba(201, 169, 98, 0.1);
+            transition: var(--transition);
+        }
+
+        .differential-item:hover {
+            border-color: var(--gold);
+        }
+
+        .differential-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .differential-icon svg {
+            width: 35px;
+            height: 35px;
+            stroke: var(--gold);
+        }
+
+        .differential-item h4 {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* ============================================
+           FAQ
+           ============================================ */
+        .faq {
+            background: linear-gradient(180deg, var(--black) 0%, var(--black-light) 100%);
+        }
+
+        .faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(201, 169, 98, 0.15);
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: left;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-modern);
+        }
+
+        .faq-question:hover {
+            color: var(--gold);
+        }
+
+        .faq-question svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--gold);
+            transition: var(--transition);
+            flex-shrink: 0;
+            margin-left: 15px;
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-answer-content {
+            padding: 0 0 20px 0;
+            color: var(--gray-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           LOCALIZAÇÃO
+           ============================================ */
+        .location {
+            background: var(--black);
+        }
+
+        .location-card {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            background: var(--black-medium);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(201, 169, 98, 0.1);
+        }
+
+        @media (min-width: 768px) {
+            .location-card {
+                grid-template-columns: 1.5fr 1fr;
+            }
+        }
+
+        .location-map {
+            height: 300px;
+        }
+
+        @media (min-width: 768px) {
+            .location-map {
+                height: 350px;
+            }
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(100%) contrast(1.1);
+            transition: var(--transition);
+        }
+
+        .location-map:hover iframe {
+            filter: grayscale(0%);
+        }
+
+        .location-info {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .location-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .location-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, rgba(201, 169, 98, 0.2), rgba(201, 169, 98, 0.05));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .location-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--gold);
+        }
+
+        .location-icon svg[fill="currentColor"] {
+            fill: var(--gold);
+            stroke: none;
+            width: 20px;
+            height: 20px;
+        }
+
+        .location-text h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .location-text p {
+            font-size: 0.9rem;
+            color: var(--gray-light);
+        }
+
+        .location-text a {
+            color: var(--gold);
+        }
+
+        .location-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* ============================================
+           CTA FINAL
+           ============================================ */
+        .final-cta {
+            background: linear-gradient(180deg, var(--black-light) 0%, var(--black) 100%);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .final-cta h2 {
+            font-family: var(--font-elegant);
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            margin-bottom: 15px;
+        }
+
+        .final-cta p {
+            color: var(--gray-light);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: var(--black);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(201, 169, 98, 0.1);
+        }
+
+        .footer-logo {
+            font-family: var(--font-elegant);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span {
+            color: var(--gold);
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(201, 169, 98, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--gold);
+        }
+
+        .footer-social svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--gold);
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover svg {
+            stroke: var(--black);
+        }
+
+        .footer-social svg[fill="currentColor"] {
+            fill: var(--gold);
+            stroke: none;
+        }
+
+        .footer-social a:hover svg[fill="currentColor"] {
+            fill: var(--black);
+        }
+
+        .footer-copy {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        /* ============================================
+           WHATSAPP FLUTUANTE
+           ============================================ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: white;
+            padding: 14px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 25px rgba(37, 211, 102, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .whatsapp-float.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        /* ============================================
+           REVEAL ANIMATIONS
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================
+           RESPONSIVIDADE
+           ============================================ */
+        @media (max-width: 480px) {
+            .treatments-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .treatment-card {
+                padding: 20px 10px;
+            }
+
+            .treatment-highlight {
+                grid-column: span 2;
+            }
+
+            .result-card, .video-card, .testimonial-card {
+                flex: 0 0 260px;
+            }
+
+            .btn {
+                padding: 14px 28px;
+                font-size: 0.9rem;
+            }
+
+            .whatsapp-float {
+                padding: 12px 18px;
+                font-size: 0.85rem;
+                bottom: 20px;
+                right: 15px;
+            }
+        }
+
+                /* ============================================
+           CTA INTERMEDIÁRIO
+           ============================================ */
+        .mid-cta {
+            background: linear-gradient(180deg, var(--black-light) 0%, var(--black) 50%, var(--black-light) 100%);
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mid-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .mid-cta::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .mid-cta-content {
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .mid-cta-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .mid-cta-content h3 {
+            font-family: var(--font-elegant);
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            margin-bottom: 10px;
+        }
+
+        .mid-cta-content p {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de Progresso -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Dra. <span>Mariana</span></div>
+                <a href="https://wa.me/5571991798237" class="header-cta">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Agendar
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="https://i.postimg.cc/W1Cz7Nxs/1767036364466-019b6b92-79d8-7293-957d-6f9e7bdd203d.png" alt="Dra. Mariana Andrade" fetchpriority="high">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Transformo seu <span class="text-gradient">Sorriso</span> e seu <span class="text-gradient">Rosto</span></h1>
+            <p class="hero-subtitle">Odontologia Estética & Harmonização Orofacial</p>
+            <div class="hero-cta">
+                <a href="https://wa.me/5571991798237?text=Olá Dra. Mariana! Gostaria de agendar uma avaliação." class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Agende sua Avaliação
+                </a>
+            </div>
+        </div>
+    </section>
+        <!-- SOBRE -->
+    <section class="about" id="sobre">
+        <div class="container">
+            <div class="about-photo reveal">
+                <img src="https://i.postimg.cc/8zF9VtY3/1767035992600-019b6b8c-eb04-7f1c-abba-9938289d0b17.png" alt="Dra. Mariana Andrade">
+            </div>
+            <div class="about-content reveal">
+                <h2>Dra. Mariana <span class="text-gradient">Andrade</span></h2>
+                <p>Sou apaixonada por <strong>transformar sorrisos</strong> e elevar a autoestima dos meus pacientes através da odontologia estética e harmonização orofacial.</p>
+                <p>Cada procedimento é personalizado para realçar sua <strong>beleza natural</strong> com resultados harmônicos e duradouros.</p>
+                <div class="about-highlight">⚜️ Atendimento Personalizado • Lauro de Freitas - BA</div>
+                <div class="about-stats">
+                    <div class="stat"><div class="stat-number">+500</div><div class="stat-label">Sorrisos</div></div>
+                    <div class="stat"><div class="stat-number">8+</div><div class="stat-label">Anos Exp.</div></div>
+                    <div class="stat"><div class="stat-number">5.0</div><div class="stat-label">Avaliação</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRATAMENTOS -->
+    <section class="treatments" id="tratamentos">
+        <div class="container">
+            <div class="section-header reveal"><h2>Meus <span class="text-gradient">Tratamentos</span></h2><p>Soluções personalizadas para você</p></div>
+            <div class="treatments-grid reveal">
+                <a href="https://wa.me/5571991798237?text=Olá! Quero saber mais sobre Lentes de Resina." class="treatment-card">
+                    <div class="treatment-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></div>
+                    <h3>Lentes de Resina</h3><p>Sorriso perfeito</p>
+                </a>
+                <a href="https://wa.me/5571991798237?text=Olá! Quero saber mais sobre Harmonização Facial." class="treatment-card">
+                    <div class="treatment-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg></div>
+                    <h3>Harmonização</h3><p>Beleza natural</p>
+                </a>
+                <a href="https://wa.me/5571991798237?text=Olá! Quero saber mais sobre Implantes." class="treatment-card">
+                    <div class="treatment-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+                    <h3>Implantes</h3><p>Dentes fixos</p>
+                </a>
+                <a href="https://wa.me/5571991798237?text=Olá! Quero saber mais sobre Clareamento." class="treatment-card">
+                    <div class="treatment-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
+                    <h3>Clareamento</h3><p>Dentes brancos</p>
+                </a>
+                <a href="https://wa.me/5571991798237?text=Olá! Quero saber mais sobre Facetas de Porcelana." class="treatment-card treatment-highlight">
+                    <div class="treatment-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>
+                    <h3>Facetas de Porcelana</h3><p>O sorriso dos seus sonhos com máxima durabilidade</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section class="results" id="resultados">
+        <div class="container"><div class="section-header reveal"><h2>Meus <span class="text-gradient">Resultados</span></h2><p>Transformações reais de pacientes</p></div></div>
+        <div class="results-scroll reveal">
+            <article class="result-card"><div class="result-image"><img src="https://instagram.fssa12-1.fna.fbcdn.net/v/t51.82787-15/515587733_18060643667217535_3265958538819444429_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ig_cache_key=MzY2NzM3NzIyMzQxNzM0MjA3NQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0NC5zZHIuQzMifQ%3D%3D&_nc_ohc=7WunYgyi-zMQ7kNvwH2G-50&_nc_oc=AdkZIZl7QY0L77nHWU3UL6IDgrHBWn3HgElilXVAf5ZewzEkHVvDerH2nhMZYnY1PGHS_paaxEEOeYhyGVmzPWj9&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fssa12-1.fna&_nc_gid=nT-I9tZSqOieeZ-3zIBN8Q&oh=00_Afn7J0Rlh2CZ2Dt9KyJinSw9MIX5B3tPQum_YMtRDRg_9A&oe=69588B13
+" alt="Lentes" loading="lazy"></div><div class="result-info"><h4>Lentes</h4><span>Sorriso radiante</span></div></article>
+            <article class="result-card"><div class="result-image"><img src="https://instagram.fssa12-1.fna.fbcdn.net/v/t51.75761-15/500903469_18057305795217535_614453346306862939_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ig_cache_key=MzY0MTgxOTkxMzEyMDg5NTQ4MA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTE0Ny5zZHIuQzMifQ%3D%3D&_nc_ohc=HV1m4QYlBEsQ7kNvwE6SGV3&_nc_oc=AdmY7rzHqZJMo4IZKh87SosuBbLl3tYuB-xT5Ucd3S4fhtYWa9u_VYUX97gikQdOFJonu8yRl6-5kKFwaIKe6sWN&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fssa12-1.fna&_nc_gid=nT-I9tZSqOieeZ-3zIBN8Q&oh=00_AflpWN6N5b0t2415QguTBNmnW9a9m2itpn9ThjBmKTtgMQ&oe=695897AF" alt="Harmonização Facial" loading="lazy"></div><div class="result-info"><h4>Harmonização Facial</h4><span>Pele renovada</span></div></article>
+            <article class="result-card"><div class="result-image"><img src="https://instagram.fssa12-1.fna.fbcdn.net/v/t51.82787-15/537705744_18065882972217535_4610069001678334547_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ig_cache_key=MzcwNzIyOTYyNjc0MzgxNDA0NQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=uzXg4YJQ1rwQ7kNvwEcyTki&_nc_oc=AdnQW0J05MOjacN1mDSi5Q3VS4aRYi-93ccQppb71IBdz_uRjxJGSo2a-ojMLG-xWJuXn2A-PrbgTmK26op5zjkv&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fssa12-1.fna&_nc_gid=nT-I9tZSqOieeZ-3zIBN8Q&oh=00_AfmlSBLMtKbSF8EblmCeVr0lO43UJ_tW2tf2jwtN-oy0KQ&oe=6958A70F" alt="Lentes" loading="lazy"></div><div class="result-info"><h4>Lentes</h4><span>Resultado incrível</span></div></article>
+            <article class="result-card"><div class="result-image"><img src="https://instagram.fssa12-1.fna.fbcdn.net/v/t51.82787-15/549273721_18067844450217535_4388730704123308010_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ig_cache_key=MzcyMjk4MjI0MDE0NzA0OTg2Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQxNi5zZHIuQzMifQ%3D%3D&_nc_ohc=TS2jvxDs27MQ7kNvwFdS4Gy&_nc_oc=AdlMwxPeWmRyNugAQazjEoaNKiWVz3zkzytgoHG7SdHinMZEsdC7vzqoNbC1dcK2VKkIH88CV6ReoQZ9J_TPeh86&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fssa12-1.fna&_nc_gid=P9XwP7-bQnC_NNGoAZbHqg&oh=00_AflT4ankqTFb5IxQk0ys282ZdHZLHEjVqtn27fEwXTwR7w&oe=6958AC20" alt="Lentes" loading="lazy"></div><div class="result-info"><h4>Lentes</h4><span>Natural e harmônico</span></div></article>
+            <article class="result-card"><div class="result-image"><img src="https://instagram.fssa12-1.fna.fbcdn.net/v/t51.75761-15/486550561_18052084607217535_7275723838436412418_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ig_cache_key=MzU5OTkyOTEwNTAwMDYxMjcyMw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=M_X2iFbUrloQ7kNvwHPPMWk&_nc_oc=Adk3LFQFCUyUgRKTc5-SdkmQ5UjPon4pSLQtTbHkA3Qw13tqhZPpdMDXn7Sn6RMoKuAOQJbzw6CZW56Kyuiapcu7&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fssa12-1.fna&_nc_gid=SegGdKyfEV202BLhm2BqMg&oh=00_AfmSlmPcOuhAXkEsG24LyHg3cWjYPdarU8G5eMXEj3uXOQ&oe=6958A15A" alt="Lentes" loading="lazy"></div><div class="result-info"><h4>Lentes</h4><span>Dentes perfeitos</span></div></article>
+            <article class="result-card"><div class="result-image"><img src="https://i.postimg.cc/MHBvcvzh/1767042370944-019b6bee-565b-799f-9939-a529462c0911.png" alt="Harmonização Masculina" loading="lazy"></div><div class="result-info"><h4>Harmonização</h4><span>Resultado masculino</span></div></article>
+        </div>
+        <div class="container"><div class="scroll-hint"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>Arraste para ver mais</div></div>
+         
+        <!-- CTA INTERMEDIÁRIO -->
+    <section class="mid-cta">
+        <div class="container">
+            <div class="mid-cta-content reveal">
+                <div class="mid-cta-icon">⚜️</div>
+                <h3>Gostou dos <span class="text-gradient">resultados</span>?</h3>
+                <p>Agende sua avaliação gratuita e descubra o que posso fazer pelo seu sorriso.</p>
+                <a href="https://wa.me/5571991798237?text=Olá Dra. Mariana! Vi seus resultados no site e gostaria de agendar uma avaliação." class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Quero Minha Avaliação Gratuita
+                </a>
+            </div>
+        </div>
+    </section>
+    </section>
+
+    <!-- VÍDEOS -->
+    <section class="videos" id="videos">
+        <div class="container"><div class="section-header reveal"><h2>Conheça meu <span class="text-gradient">Trabalho</span></h2><p>Veja os bastidores dos procedimentos</p></div></div>
+        <div class="videos-scroll reveal">
+            <div class="video-card"><iframe src="https://player.vimeo.com/video/1150198606?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1" allow="autoplay; fullscreen; picture-in-picture" title="Sorriso"></iframe></div>
+            <div class="video-card"><iframe src="https://player.vimeo.com/video/1150198632?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1" allow="autoplay; fullscreen; picture-in-picture" title="Alinhadores"></iframe></div>
+            <div class="video-card"><iframe src="https://player.vimeo.com/video/1150198652?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1" allow="autoplay; fullscreen; picture-in-picture" title="Harmonização"></iframe></div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="testimonials" id="depoimentos">
+        <div class="container"><div class="section-header reveal"><h2>O que <span class="text-gradient">dizem</span></h2><p>Depoimentos de pacientes</p></div></div>
+        <div class="testimonials-scroll reveal">
+            <article class="testimonial-card">
+                <div class="testimonial-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                <blockquote>"A Dra. Mariana mudou minha vida! Tinha vergonha de sorrir e hoje não paro de mostrar meus dentes. Profissional incrível!"</blockquote>
+                <div class="testimonial-author"><div class="testimonial-avatar">A</div><div class="testimonial-info"><h4>Ana Paula</h4><span>Lentes de Resina</span></div></div>
+            </article>
+            <article class="testimonial-card">
+                <div class="testimonial-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                <blockquote>"Fiz harmonização e o resultado ficou super natural. Ela entendeu exatamente o que eu queria. Super recomendo!"</blockquote>
+                <div class="testimonial-author"><div class="testimonial-avatar">C</div><div class="testimonial-info"><h4>Camila</h4><span>Harmonização Facial</span></div></div>
+            </article>
+            <article class="testimonial-card">
+                <div class="testimonial-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                <blockquote>"Atendimento impecável do início ao fim. Clareamento ficou perfeito e me deixou tranquilo durante todo o processo."</blockquote>
+                <div class="testimonial-author"><div class="testimonial-avatar">R</div><div class="testimonial-info"><h4>Roberto</h4><span>Clareamento</span></div></div>
+            </article>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section class="differentials">
+        <div class="container">
+            <div class="section-header reveal"><h2>Por que me <span class="text-gradient">escolher</span>?</h2></div>
+            <div class="differentials-grid reveal">
+                <div class="differential-item"><div class="differential-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div><h4>Atendimento Humanizado</h4></div>
+                <div class="differential-item"><div class="differential-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div><h4>Resultados Naturais</h4></div>
+                <div class="differential-item"><div class="differential-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div><h4>Tecnologia Avançada</h4></div>
+                <div class="differential-item"><div class="differential-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg></div><h4>Facilito Pagamento</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header reveal"><h2>Dúvidas <span class="text-gradient">Frequentes</span></h2></div>
+            <div class="faq-list reveal">
+                <div class="faq-item"><button class="faq-question">Quanto tempo dura as lentes de resina?<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="faq-answer"><div class="faq-answer-content">Com os cuidados adequados, as lentes de resina podem durar de 5 a 7 anos. Faço um acompanhamento regular para garantir a durabilidade do seu sorriso.</div></div></div>
+                <div class="faq-item"><button class="faq-question">A harmonização facial dói?<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="faq-answer"><div class="faq-answer-content">Não! Utilizo anestesia tópica que deixa o procedimento praticamente indolor. Meus pacientes relatam apenas um leve desconforto.</div></div></div>
+                <div class="faq-item"><button class="faq-question">Quais formas de pagamento?<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="faq-answer"><div class="faq-answer-content">Aceito PIX, cartão de crédito em até 12x, e também faço condições especiais para pagamento à vista. Vamos encontrar a melhor opção para você!</div></div></div>
+                <div class="faq-item"><button class="faq-question">A avaliação é gratuita?<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="faq-answer"><div class="faq-answer-content">Sim! A avaliação inicial é totalmente gratuita. Nela, conversamos sobre seus objetivos e crio um plano personalizado para você.</div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO -->
+    <section class="location" id="localizacao">
+        <div class="container">
+            <div class="section-header reveal"><h2>Minha <span class="text-gradient">Localização</span></h2><p>Venha me conhecer</p></div>
+            <div class="location-card reveal">
+                <div class="location-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.3!2d-38.3068009!3d-12.8806548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7163f2754a49093%3A0xfdbcd77895be392d!2sMariana%20Andrade%20Odontologia%20e%20Est%C3%A9tica%20Avan%C3%A7ada!5e0!3m2!1spt-BR!2sbr!4v1699999999999!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização"></iframe></div>
+                <div class="location-info">
+                    <div class="location-item"><div class="location-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div><div class="location-text"><h4>Endereço</h4><p>Lauro de Freitas - BA</p></div></div>
+                    <div class="location-item"><div class="location-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div><div class="location-text"><h4>Horário</h4><p>Seg-Sex: 8h às 18h</p></div></div>
+                    <div class="location-item"><div class="location-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><div class="location-text"><h4>WhatsApp</h4><p><a href="https://wa.me/5571991798237">(71) 99179-8237</a></p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="reveal">Pronta para <span class="text-gradient">transformar</span> seu sorriso?</h2>
+            <p class="reveal">Agende sua avaliação gratuita e dê o primeiro passo.</p>
+            <a href="https://wa.me/5571991798237?text=Olá Dra. Mariana! Vim pelo seu site e gostaria de agendar uma avaliação." class="btn btn-primary reveal">Quero Agendar Minha Avaliação</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">Dra. Mariana <span>Andrade</span></div>
+            <div class="footer-social">
+                <a href="https://instagram.com/dra.marianandrade" target="_blank" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                <a href="https://wa.me/5571991798237" target="_blank" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+            </div>
+            <div class="footer-copy"><p>© 2024 Dra. Mariana Andrade. Todos os direitos reservados.</p></div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLUTUANTE -->
+    <a href="https://wa.me/5571991798237?text=Olá! Vim pelo site e gostaria de mais informações." class="whatsapp-float" id="whatsappFloat" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Agendar Consulta
+    </a>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Barra de progresso
+        const progressBar = document.getElementById('progressBar');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            progressBar.style.width = scrollPercent + '%';
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                faqItems.forEach(other => {
+                    if (other !== item) other.classList.remove('active');
+                });
+                item.classList.toggle('active');
+            });
+        });
+
+        // Scroll Reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
+                const revealTop = element.getBoundingClientRect().top;
+                if (revealTop < window.innerHeight - 80) {
+                    element.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // WhatsApp Float visibility
+        const whatsappFloat = document.getElementById('whatsappFloat');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                whatsappFloat.classList.add('visible');
+            } else {
+                whatsappFloat.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>
