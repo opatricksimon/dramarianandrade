@@ -554,16 +554,19 @@
             color: var(--verde-menta);
             filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
         }
-
         /* ========================================
            HERO - RESPONSIVO
         ======================================== */
         
-        /* Mobile pequeno - permite quebra */
+        /* Mobile pequeno */
         @media (max-width: 480px) {
             .hero-title {
                 white-space: normal;
                 font-size: 1.75rem;
+            }
+            
+            .hero-subtitle {
+                white-space: normal;
             }
             
             .hero-content {
@@ -577,6 +580,22 @@
             }
         }
 
+        /* Mobile médio */
+        @media (min-width: 481px) and (max-width: 767px) {
+            .hero-title {
+                white-space: normal;
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                white-space: normal;
+            }
+            
+            .hero-content {
+                padding: 0 24px 60px;
+            }
+        }
+
         /* Tablet */
         @media (min-width: 768px) {
             .hero-buttons {
@@ -585,43 +604,92 @@
             }
             
             .hero-content {
-                padding: 0 24px 80px;
+                padding: 0 24px 60px;
+            }
+            
+            .hero-subtitle {
+                white-space: nowrap;
             }
         }
 
         /* Desktop */
         @media (min-width: 1024px) {
+            .hero {
+                min-height: 100vh;
+            }
+            
+            .hero-gradient {
+                background: linear-gradient(
+                    to top,
+                    rgba(31, 58, 68, 1) 0%,
+                    rgba(31, 58, 68, 0.98) 12%,
+                    rgba(31, 58, 68, 0.8) 22%,
+                    rgba(31, 58, 68, 0.4) 35%,
+                    rgba(31, 58, 68, 0) 55%,
+                    rgba(31, 58, 68, 0) 100%
+                );
+            }
+            
             .hero-content {
-                padding: 0 24px 100px;
+                padding: 0 24px 40px;
+                max-width: 1000px;
             }
             
             .hero-tag {
                 font-size: 0.75rem;
                 letter-spacing: 2.5px;
                 padding: 10px 20px;
+                margin-bottom: 12px;
             }
             
             .hero-title {
-                font-size: 3.5rem;
-                margin-bottom: 20px;
+                font-size: 3.25rem;
+                margin-bottom: 14px;
+                white-space: nowrap;
             }
             
             .hero-subtitle {
                 font-size: 1.125rem;
-                margin-bottom: 36px;
+                margin-bottom: 24px;
+                max-width: none;
+                white-space: nowrap;
+            }
+            
+            .hero-location {
+                margin-top: 20px;
             }
         }
 
         /* Desktop grande */
         @media (min-width: 1400px) {
             .hero-content {
-                padding: 0 24px 120px;
+                padding: 0 24px 45px;
             }
             
             .hero-title {
-                font-size: 4rem;
+                font-size: 3.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1875rem;
             }
         }
+        
+        /* Desktop muito grande */
+        @media (min-width: 1600px) {
+            .hero-content {
+                padding: 0 24px 50px;
+            }
+            
+            .hero-title {
+                font-size: 3.75rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+        }
+
 
         /* ========================================
            SOBRE
@@ -2055,9 +2123,8 @@
             <span class="hero-tag">Odontologia Estética & Reabilitação Oral</span>
             <h1 class="hero-title">A elegância começa no <span>sorriso</span></h1>
             <p class="hero-subtitle">
-                Reabilitação oral com naturalidade e sofisticação. Tecnologia de ponta 
-                e planejamento digital para um sorriso que é a sua marca.
-            </p>
+                Reabilitação oral com naturalidade e sofisticação,
+                 para um sorriso que é a sua marca. </p>
             <div class="hero-buttons">
                 <a href="https://wa.me/5571999999999?text=Olá! Vim pelo site e gostaria de agendar uma avaliação." class="btn btn-primary" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
